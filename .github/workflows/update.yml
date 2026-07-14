@@ -1,0 +1,25 @@
+name: OTA Update (EAS)
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  update:
+    if: startsWith(github.event.head_commit.message, 'ota')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Publish OTA update
+        run: npx eas-cli@latest update --channel production --message "${{ github.event.head_commit.message }}" --non-interactive
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}

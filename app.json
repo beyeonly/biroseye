@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "BirosEye",
+    "slug": "biroseye",
+    "version": "1.0.107",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0d1f35"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0d1f35"
+      },
+      "package": "com.birospanos.eyebiros",
+      "versionCode": 107,
+      "permissions": [
+        "android.permission.CAMERA"
+      ],
+      "usesCleartextTraffic": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "018327dd-981d-4633-8052-93fc788a5782"
+      }
+    },
+    "plugins": [
+      "./plugins/withNetworkSecurity.js"
+    ],
+    "owner": "birospanos",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "enabled": true,
+      "url": "https://u.expo.dev/018327dd-981d-4633-8052-93fc788a5782",
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 0,
+      "requestHeaders": {
+        "expo-channel-name": "production"
+      }
+    }
+  }
+}
